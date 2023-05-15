@@ -1,0 +1,84 @@
+.smallitem {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	min-height: 100px;
+	min-width: 200px;
+
+	&__left {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding-left: 3px;
+		img {
+			width: 34px;
+		}
+		p {
+			font-size: 1.4rem;
+			font-weight: bold;
+		}
+	}
+
+	&__right {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: left;
+		padding-right: 3px;
+
+		p {
+			font-size: 0.7rem;
+		}
+
+		&-title {
+			p {
+				font-weight: bold;
+				font-size: 0.9rem;
+			}
+		}
+	}
+
+	&__layer {
+		position: absolute;
+		display: flex;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background-color: transparent;
+		transition: background-color 0.3s;
+
+		button {
+			flex-direction: column;
+			margin-left: 10px;
+			margin-right: 10px;
+			background: none;
+			border: none;
+			padding: 10px 20px 10px 20px;
+			background-color: transparent;
+			color: transparent;
+			border-radius: 10px;
+			transition: color .3s;
+			transition: background-color .3s;
+		}
+
+	}
+
+	&__layer:hover {
+		background-color: $blue-color-transparent;
+		button {
+			display: block;
+			cursor: pointer;
+			background-color: $white-color;
+			color: $black-color;
+		}
+		button:hover {
+			background-color: $black-color;
+			color: $white-color;
+		}
+	}
+
+	
+}

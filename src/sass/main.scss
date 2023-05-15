@@ -1,0 +1,204 @@
+@import './colors';
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	scroll-behavior: smooth;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: $white-color;
+	font-style: 2rem;
+}
+
+.wrapper {
+	margin: 10px;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: 1fr;
+	gap: 10px;
+}
+
+.mainitem {
+	grid-column: 1/2;
+	grid-row: 2/4;
+	min-height: 300px;
+	min-width: 200px;
+
+	.nonactive {
+		display: none;
+	}
+
+	&__details {
+		margin: 10px;
+		width: 100%;
+		position: relative;
+		&-topline {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			img {
+				height: 70px;
+				width: 70px;
+				margin-right: 20px;
+			}
+			.title {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				h2 {
+					font-size: 1.3rem;
+				}
+				p {
+					font-size: 1.1rem;
+				}
+				img {
+					height: 50px;
+					width: 50px;
+				}
+			}
+		}
+		&-bottomline {
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			margin-top: 20px;
+			.mainitem__details-right,
+			.mainitem__details-left {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				img {
+					height: 25px;
+					width: 25px;
+					margin-bottom: 10px;
+				}
+			}
+		}
+
+		&-semiline {
+			display: flex;
+			flex-direction: column;
+			margin-top: 20px;
+			align-items: center;
+			img {
+				height: 40px;
+				width: 40px;
+			}
+		}
+
+		&-close {
+			position: absolute;
+			display: flex;
+			border-radius: 15px;
+			border: none;
+			top: 0px;
+			right: 0px;
+			transform: background-color 0.3s;
+			img {
+				transition: transform 0.3s;
+			}
+			cursor: pointer;
+		}
+
+	}
+	}
+	
+
+&__adplace {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 0.8rem;
+	width: 100%;
+	padding: 20px;
+
+	input {
+		height: 30px;
+		width: 120px;
+		border-radius: 10px;
+		border: none;
+		padding-left: 10px;
+		font-size: 0.8rem;
+	}
+
+	&-bottom {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 90%;
+
+		button {
+			height: 25px;
+			width: 100%;
+			border-radius: 10px;
+			border: none;
+			padding: 20px, 20px;
+			margin-top: 10px;
+			font-size: 0.8rem;
+		}
+	}
+
+	.addPointCityName {
+		width: 80%;
+		max-width: 270px;
+	}
+	&-geogr {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&-details {
+		margin-bottom: 8px;
+		margin-top: 10px;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	p {
+		font-size: 0.6rem;
+		margin-bottom: 5px;
+		margin-top: 5px;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+	.title {
+		margin: 5px;
+	}
+
+	.addPointButton {
+		height: 30px;
+		width: 80%;
+		max-width: 270px;
+	}
+
+	&-error {
+		color: $red-color;
+		margin-top: 10px;
+		display: none;
+	}
+}
+
+.footer {
+	grid-column: 1/2;
+	min-height: 100px;
+}
+
+.item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $gray-color;
+	border: none;
+	border-radius: 10px;
+}
+
+@import './smallblock';
+@import './navbar';
+@import './media';

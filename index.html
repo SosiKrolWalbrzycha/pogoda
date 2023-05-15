@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/css/main.min.css">
+</head>
+
+<body>
+
+
+
+
+    <div class="wrapper">
+        <div class="item nav">
+
+          <input class="nav__range" type="range" name="points" min="1" max="8">
+
+            <div class="nav__logo"><img class="sun" src="/dist/img/sun.svg" alt="WheatherAppLogo" id="ic">
+                <h1>PogoDaj</h1><img src="/dist/img/cloud-storm.svg" alt="WheatherAppLogo" id="ic">
+            </div>
+
+
+           
+
+
+            <div class="nav__buttons"><button class="burger"><img src="/dist/img/menu-2.svg" alt="Buger Menu"
+                        id=""></button>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="item mainitem">
+
+            <div class="mainitem__adplace">
+
+                <h2 class="title">Dodaj miejsce do prognozy</h2>
+
+                <p>1. Podaj nazwę miejcowości:</p>
+                <input type="text" placeholder="np. Wałbrzych Podzamcze" class="addPointCityName">
+
+                <div class="mainitem__adplace-geogr">
+
+                    <div class="mainitem__adplace-details">
+                        <p>2. Podaj szerokość geogr.:</p>
+                        <input type="number" placeholder="np. 50.8241278" class="addPointLatitude">
+                    </div>
+
+
+                    <div class="mainitem__adplace-details">
+                        <p>3. Podaj długość geogr.</p>
+                        <input type="number" placeholder="np. 16.2771328" class="addPointlongitude">
+                    </div>
+
+                </div>
+                <div class="mainitem__adplace-bottom">
+
+                    <p>Pamiętaj, że jesli dodajesz koordynaty półkuli południowej lub pólkuli zachodniej (na zachód od
+                        Londynu) do koordyntatów należy dodać minus. </p>
+
+                    <button class="addPointButton">Dodaj miescówkę</button>
+
+                    <p class="mainitem__adplace-error"></p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+    </div>
+
+
+    </div>
+
+
+    <script src="/dist/js/detailsShow.min.js"></script>
+    <script src="/dist/js/forecast.min.js"></script>
+    <script src="/dist/js/localstoreAddPlaces.min.js"></script>
+    <script src="/dist/js/blockManagement.min.js"></script>
+    <script src="/dist/js/oneBlockAdd.min.js"></script>
+
+
+    <script src="/dist/js/placeAddToArray.min.js"></script>
+    <script src="/dist/js/manyBlocksAdd.min.js"></script>
+
+    <script src="/dist/js/script.min.js"></script>
+
+</body>
+
+</html>
