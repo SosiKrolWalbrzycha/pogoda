@@ -10,6 +10,8 @@ const AddOneBlock = () => {
 		)
 			.then(res => res.json())
 			.then(res => {
+
+				
 				//Wybieramy ikonę
 				let weathericon
 

@@ -1,3 +1,6 @@
+
+
+
 const deleteBlock = el => {
 	smallBlocks.forEach(element => {
 		if (element.id === el) {

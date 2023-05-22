@@ -1,32 +1,42 @@
 const showWeather = () => {
-	console.log('buger dziala')
 
 	clearContainer()
 
 	let placeNumber = 0
 
 	weatherData.forEach(el => {
+		const block = document.createElement('div')
+		block.classList.add('smallitem')
+		
 		let weathericon
 
 		if (el[2].list[timePeriod].weather[0].id === 800) {
 			weathericon = 'sun.svg'
+			block.classList.add('sun')
 		} else if (el[2].list[timePeriod].weather[0].id > 599 && el[2].list[timePeriod].weather[0].id < 623) {
 			weathericon = 'cloud-snow.svg'
+			block.classList.add('snow')
 		} else if (el[2].list[timePeriod].weather[0].id > 499 && el[2].list[timePeriod].weather[0].id < 532) {
 			weathericon = 'cloud-rain.svg'
+			block.classList.add('rain')
 		} else if (el[2].list[timePeriod].weather[0].id > 299 && el[2].list[timePeriod].weather[0].id < 322) {
 			weathericon = 'cloud-rain.svg'
+			block.classList.add('cloud')
 		} else if (el[2].list[timePeriod].weather[0].id > 199 && el[2].list[timePeriod].weather[0].id < 233) {
 			weathericon = 'cloud-storm.svg'
+			block.classList.add('storm')
 		} else if (el[2].list[timePeriod].weather[0].id > 700 && el[2].list[timePeriod].weather[0].id < 782) {
 			weathericon = 'mist.svg'
+			block.classList.add('mist')
+
 		} else if (el[2].list[timePeriod].weather[0].id > 800 && el[2].list[timePeriod].weather[0].id < 805) {
 			weathericon = 'cloud.svg'
+			block.classList.add('cloud')
 		}
 		//Wklejamy dane o pogodzie
-		const block = document.createElement('div')
+		
 		block.classList.add('smallitem')
-		block.classList.add('item')
+	
 		block.setAttribute('id', `${el[1]}`)
 		block.innerHTML = `<div class="smallitem__left">
                 <div class="smallitem__left-icon"><img src="/dist/img/${weathericon}" alt="weather icon" id="ic"></div>

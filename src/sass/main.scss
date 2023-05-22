@@ -9,6 +9,7 @@
 }
 
 body {
+	position: relative;
 	scroll-behavior: smooth;
 	font-family: Arial, Helvetica, sans-serif;
 	background-color: $white-color;
@@ -23,11 +24,72 @@ body {
 	gap: 10px;
 }
 
+
+
+.navbar {
+	grid-column: 1/2;
+	grid-row: 1/2;
+	min-height: 160px;
+	flex-direction: column;
+	z-index: 10;
+
+	&__logo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+
+		h1 {
+			font-size: 1.2rem;
+		}
+		img {
+			height: 80px;
+			width: 80px;
+			background-color: none;
+			margin-top: 10px;
+		}
+	}
+
+	&__range {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		h2 {
+			font-size: 0.8rem;
+		}
+		p {
+			font-size: 0.6rem;
+		}
+		input {
+			height: 10px;
+			width: 300px;
+			margin: 10px;
+		}
+	}
+}
+
+.mainitem::after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url('/dist/img/map-of-the-world-2401458_1280.jpg');
+	background-position: center;
+	background-size: cover;
+	opacity: 0.1;
+	border-radius: 10px;
+}
 .mainitem {
+	position: relative;
 	grid-column: 1/2;
 	grid-row: 2/4;
 	min-height: 300px;
 	min-width: 200px;
+	max-height: 300px;
 
 	.nonactive {
 		display: none;
@@ -37,6 +99,7 @@ body {
 		margin: 10px;
 		width: 100%;
 		position: relative;
+		z-index: 10;
 		&-topline {
 			display: flex;
 			align-items: center;
@@ -105,83 +168,83 @@ body {
 			}
 			cursor: pointer;
 		}
-
-	}
-	}
-	
-
-&__adplace {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	font-size: 0.8rem;
-	width: 100%;
-	padding: 20px;
-
-	input {
-		height: 30px;
-		width: 120px;
-		border-radius: 10px;
-		border: none;
-		padding-left: 10px;
-		font-size: 0.8rem;
 	}
 
-	&-bottom {
+	&__adplace {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: 90%;
+		font-size: 0.8rem;
+		width: 100%;
+		padding: 20px;
+		z-index: 10;
 
-		button {
-			height: 25px;
-			width: 100%;
+		input {
+			height: 30px;
+			width: 120px;
 			border-radius: 10px;
 			border: none;
-			padding: 20px, 20px;
-			margin-top: 10px;
+			padding-left: 10px;
 			font-size: 0.8rem;
 		}
-	}
 
-	.addPointCityName {
-		width: 80%;
-		max-width: 270px;
-	}
-	&-geogr {
-		display: flex;
-		justify-content: space-between;
-	}
+		&-bottom {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 90%;
 
-	&-details {
-		margin-bottom: 8px;
-		margin-top: 10px;
-		margin-left: 10px;
-		margin-right: 10px;
-	}
+			button {
+				height: 25px;
+				width: 100%;
+				border-radius: 10px;
+				border: none;
+				padding: 20px, 20px;
+				margin-top: 10px;
+				font-size: 0.8rem;
+				cursor: pointer;
+			}
+		}
 
-	p {
-		font-size: 0.6rem;
-		margin-bottom: 5px;
-		margin-top: 5px;
-		margin-left: 5px;
-		margin-right: 5px;
-	}
+		.addPointCityName {
+			width: 80%;
+			max-width: 270px;
+		}
+		&-geogr {
+			display: flex;
+			justify-content: space-between;
+		}
 
-	.title {
-		margin: 5px;
-	}
+		&-details {
+			margin-bottom: 8px;
+			margin-top: 10px;
+			margin-left: 10px;
+			margin-right: 10px;
+		}
 
-	.addPointButton {
-		height: 30px;
-		width: 80%;
-		max-width: 270px;
-	}
+		p {
+			font-size: 0.6rem;
+			margin-bottom: 5px;
+			margin-top: 5px;
+			margin-left: 5px;
+			margin-right: 5px;
+		}
 
-	&-error {
-		color: $red-color;
-		margin-top: 10px;
-		display: none;
+		.title {
+			margin: 5px;
+		}
+
+		.addPointButton {
+			height: 30px;
+			width: 80%;
+			max-width: 270px;
+		}
+
+		&-error {
+			color: $red-color;
+			margin-top: 10px;
+			display: none;
+		}
 	}
 }
 
@@ -194,11 +257,53 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: $gray-color;
+	background-color: rgba(0, 0, 255, .2);
 	border: none;
 	border-radius: 10px;
 }
 
+.navitem {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $orange-color;
+	border: none;
+	border-radius: 10px;
+	z-index: 2;
+}
+
+
+.smallitem {
+	position: relative;
+	display: flex;
+	text-shadow: 1px 1px 1px $white-color;
+	justify-content: center;
+
+	background-size: cover;
+	align-items: center;
+	border: none;
+	border-radius: 10px;
+}
+
+.sun {
+	background-image: url('/dist/img/sun-bgc.jpg');
+}
+.snow {
+	background-image: url('/dist/img/snow-bgc.jpg');
+}
+.mist {
+	background-image: url('/dist/img/mist-bgc.jpg');
+}
+.cloud {
+	background-image: url('/dist/img/clouds-bgc.jpg');
+}
+.storm {
+	background-image: url('/dist/img/storm-bgc.jpg');
+}
+.rain {
+	background-image: url('/dist/img/rain-bgc.jpg');
+}
+
 @import './smallblock';
-@import './navbar';
 @import './media';
