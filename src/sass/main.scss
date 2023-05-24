@@ -31,7 +31,7 @@ body {
 	grid-row: 1/2;
 	min-height: 160px;
 	flex-direction: column;
-	z-index: 10;
+	z-index: 3;
 
 	&__logo {
 		display: flex;
@@ -69,7 +69,36 @@ body {
 		}
 	}
 }
+.navitem {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	border: none;
+	border-radius: 10px;
+	z-index: 5;
+}
 
+.navitem::before {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	background-image: url('/dist/img/burza.png');
+	background-size: cover;
+	z-index: -2;
+	border-radius: 10px;
+}
+.navitem::after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	background-color: rgba($color: $orange-color, $alpha: .8);
+	z-index: -1;
+	border-radius: 10px;
+}
 .mainitem::after {
 	content: '';
 	width: 100%;
@@ -262,16 +291,7 @@ body {
 	border-radius: 10px;
 }
 
-.navitem {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: $orange-color;
-	border: none;
-	border-radius: 10px;
-	z-index: 2;
-}
+
 
 
 .smallitem {

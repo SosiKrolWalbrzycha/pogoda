@@ -10,30 +10,37 @@ const AddOneBlock = () => {
 		)
 			.then(res => res.json())
 			.then(res => {
-
+				const block = document.createElement('div')
+				block.classList.add('smallitem')
 				
 				//Wybieramy ikonę
 				let weathericon
 
 				if (res.weather[0].id === 800) {
 					weathericon = 'sun.svg'
+					block.classList.add('sun')
 				} else if (res.weather[0].id > 599 && res.weather[0].id < 623) {
 					weathericon = 'cloud-snow.svg'
+					block.classList.add('snow')
 				} else if (res.weather[0].id > 499 && res.weather[0].id < 532) {
 					weathericon = 'cloud-rain.svg'
+					block.classList.add('rain')
 				} else if (res.weather[0].id > 299 && res.weather[0].id < 322) {
 					weathericon = 'cloud-rain.svg'
+					block.classList.add('cloud')
 				} else if (res.weather[0].id > 199 && res.weather[0].id < 233) {
 					weathericon = 'cloud-storm.svg'
+					block.classList.add('storm')
 				} else if (res.weather[0].id > 700 && res.weather[0].id < 782) {
 					weathericon = 'mist.svg'
+					block.classList.add('mist')
 				} else if (res.weather[0].id > 800 && res.weather[0].id < 805) {
 					weathericon = 'cloud.svg'
+					block.classList.add('cloud')
 				}
 				//Wklejamy dane o pogodzie
-				const block = document.createElement('div')
-				block.classList.add('smallitem')
-				block.classList.add('item')
+				
+		
 				block.setAttribute('id', `${arrayToProcess[3]}`)
 				block.innerHTML = `<div class="smallitem__left">
                 <div class="smallitem__left-icon"><img src="/dist/img/${weathericon}" alt="" id="ic"></div>

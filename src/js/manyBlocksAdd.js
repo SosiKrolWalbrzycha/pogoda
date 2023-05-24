@@ -1,6 +1,7 @@
 const showWeather = () => {
 
 	clearContainer()
+	
 
 	let placeNumber = 0
 
@@ -35,7 +36,7 @@ const showWeather = () => {
 		}
 		//Wklejamy dane o pogodzie
 		
-		block.classList.add('smallitem')
+	
 	
 		block.setAttribute('id', `${el[1]}`)
 		block.innerHTML = `<div class="smallitem__left">
